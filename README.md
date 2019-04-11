@@ -1,2 +1,2 @@
-# pempo-v2
+# pempo
 A simple functional blog

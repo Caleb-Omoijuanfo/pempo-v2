@@ -1,0 +1,57 @@
+.icon {
+  display: none;
+}
+
+.navbar {
+  background-color: #234797 !important;
+}
+
+.navbar a {
+  color: #FFCC78 !important;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 800px) {
+  .topnav a:not(.icon){display: none;}
+  a.icon {
+    float: right;
+    display: block;
+  }
+
+  .navbar .navbar-brand {
+    margin: 0 auto;
+  }
+
+  .topnav {
+    width: 100% !important;
+  }
+
+  .menu {
+    padding: 5px;
+    text-decoration: none !important;
+  }
+
+  .menu:hover {
+    background-color: #2e4476;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
