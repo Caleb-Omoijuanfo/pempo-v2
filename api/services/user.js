@@ -5,7 +5,7 @@ const assert = require('assert');
 const url = 'mongodb://localhost:27017';
 
 // Database Name
-const dbName = 'pempo';
+const dbName = 'db';
 
 
 const User = {
@@ -25,7 +25,7 @@ const User = {
         const db = client.db(dbName);
 
         // Get the user collection
-        const collection = db.collection('user');
+        const collection = db.collection('users');
 
         var userObj = {
           "firsName": data.firstName,
@@ -64,7 +64,7 @@ const User = {
       const db = client.db(dbName);
 
       // Get the documents collection
-      const collection = db.collection('user');
+      const collection = db.collection('users');
 
       // Find some documents
       collection.find({}).toArray(function(err, docs) {

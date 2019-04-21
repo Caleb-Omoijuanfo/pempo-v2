@@ -4,17 +4,115 @@
 
 .navbar {
   background-color: #234797 !important;
+  padding-left: 150px;
+  padding-right: 210px;
 }
 
 .navbar a {
   color: #FFCC78 !important;
 }
 
+.topnav .menu {
+  padding-left: 50px;
+}
+
+.content {
+  background-color: #EBECEF;
+  display: flex;
+  padding-top: 64px;
+}
+
+.left-container, .right-container {
+  display: flex;
+}
+
+.left-container {
+  border: 1px solid blue;
+  margin-left: 150px;
+  margin-right: 36px;
+}
+
+.right-container {
+  border: 1px solid red;
+  flex-direction: column !important;
+}
+
+.right-container .card {
+  margin-bottom: 36px !important;
+  max-height: 246px;
+}
+
+.contact-us {
+  width:100%;
+  height: 217px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact {
+  text-align: center;
+}
+
+.contact h2 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 2.64vw; /*36px*/
+}
+
+.contact p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.76vw; /*24px*/
+}
+
+.contact button:hover {
+  background-color: #234797;
+  color: #FFCC78;
+}
+
+
+form {
+  margin-bottom: 10px;
+}
+
+input[type=text] {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #000000;
+    width: 100%;
+}
+
+input[placeholder] {
+    text-align: center;
+}
+
+footer {
+  width: 100%;
+  background-color: #2E4476;
+  height: 261px;
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    flex-direction:column-reverse;
+  }
+
+  .right-container .card {
+    width: 100%;
+  }
 
 
 
+  .left-container {
+    margin: 0 !important;
+  }
+
+  .right-container {
+    margin: 0 !important;
+  }
 
 
+
+}
 
 @media screen and (max-width: 800px) {
   .topnav a:not(.icon){display: none;}
@@ -25,6 +123,10 @@
 
   .navbar .navbar-brand {
     margin: 0 auto;
+  }
+
+  .navbar {
+    padding: 0 !important;
   }
 
   .topnav {
@@ -38,6 +140,10 @@
 
   .menu:hover {
     background-color: #2e4476;
+  }
+
+  .col-8 {
+    width: 100% !important;
   }
 
 }
