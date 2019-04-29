@@ -27,19 +27,58 @@
 }
 
 .left-container {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   margin-left: 150px;
   margin-right: 36px;
 }
 
+.left-container .card {
+  max-height: 612px;
+}
+
+.left-container .featured-post {
+  border: none;
+  border-top: 1px solid #6c757d;
+  border-bottom: 1px solid #6c757d;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.left-container .featured-post p a {
+  color: #6c757d;
+}
+
+.fa {
+  width:32px !important;
+  height: 32px !important;
+}
+
 .right-container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   flex-direction: column !important;
 }
 
 .right-container .card {
   margin-bottom: 36px !important;
-  max-height: 246px;
+  height: 246px !important;
+  width: 76%;
+}
+
+.card-img {
+  margin-left: 10px;
+  margin-top: 15px;
+}
+
+.left-container .card-img {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+.button-container {
+  margin-bottom: 40px;
 }
 
 .contact-us {
@@ -64,31 +103,69 @@
   font-size: 1.76vw; /*24px*/
 }
 
-.contact button:hover {
-  background-color: #234797;
-  color: #FFCC78;
+ button:hover {
+  background-color: #234797 !important;
+  color: #FFCC78 !important;
 }
-
 
 form {
   margin-bottom: 10px;
 }
 
-input[type=text] {
+.index-form input {
     background: transparent;
     border: none;
     border-bottom: 1px solid #000000;
     width: 100%;
 }
 
-input[placeholder] {
+.index-form input[placeholder] {
     text-align: center;
 }
 
 footer {
+  padding-top: 30px;
   width: 100%;
-  background-color: #2E4476;
-  height: 261px;
+  background-color: #234797;
+  height: 227px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.footer-extension {
+    background-color: #2E4476;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-extension-item p{
+    color: #ffffff;
+}
+
+footer li {
+  list-style-type: none;
+}
+
+.col1 a, .col3, .col2 a, .col2 .navbar-brand {
+  color: #FFCC78;
+}
+
+
+/* Contact Page */
+.right-container .contact-card {
+  height: 100% !important;
+}
+
+/* Responsive card images */
+@media screen and (max-width: 700px) {
+  .card-img {
+    width: 95%;
+    height: 98px;
+    object-fit: cover;
+  }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -98,19 +175,25 @@ footer {
 
   .right-container .card {
     width: 100%;
+    height:  100% !important;
   }
-
-
 
   .left-container {
-    margin: 0 !important;
+    margin: 0;
   }
 
-  .right-container {
-    margin: 0 !important;
+  .left-container .card {
+    width: 100% !important;
   }
 
+  .right-container .contact-card {
+    height: 100% !important;
+  }
 
+  footer {
+    flex-direction: column;
+    height: 100%;
+  }
 
 }
 
