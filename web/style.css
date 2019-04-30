@@ -20,6 +20,12 @@
   background-color: #EBECEF;
   display: flex;
   padding-top: 64px;
+  height: 100% !important;
+}
+
+.content-about {
+  height: 700px !important;
+  display: flex;
 }
 
 .left-container, .right-container {
@@ -64,6 +70,9 @@
   width: 76%;
 }
 
+.about {
+  height: 500px !important;
+}
 .card-img {
   margin-left: 10px;
   margin-top: 15px;
@@ -173,6 +182,16 @@ footer li {
     flex-direction:column-reverse;
   }
 
+  .content-about {
+    display: flex;
+    flex-direction: column-reverse;
+    height:100% !important;
+  }
+
+  .about {
+    height: 1200px !important;
+  }
+
   .right-container .card {
     width: 100%;
     height:  100% !important;
@@ -180,6 +199,10 @@ footer li {
 
   .left-container {
     margin: 0;
+  }
+
+  .right-container {
+    height: 100% !important;
   }
 
   .left-container .card {
