@@ -18,7 +18,10 @@ app.use('/', express.static('public'));
 var userController = require('./controllers/userController');
 app.use('/user', userController);
 
-var allUserController= require('./controllers/allUserController');
-app.use('/user/all', allUserController);
+var postController = require('./controllers/postController');
+app.use('/post', postController);
+
+var allPostController = require('./controllers/allPostController');
+app.use('/post/all', allPostController);
 
 module.exports = app;

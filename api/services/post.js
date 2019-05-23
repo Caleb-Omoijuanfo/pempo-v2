@@ -7,8 +7,7 @@ const url = 'mongodb://localhost:27017';
 // Database Name
 const dbName = 'pempo';
 
-
-const User = {
+const Post = {
 
   create: function(data, callback){
 
@@ -25,28 +24,30 @@ const User = {
         const db = client.db(dbName);
 
         // Get the user collection
-        const collection = db.collection('users');
+        const collection = db.collection('posts');
 
-        var userObj = {
-          "firsName": data.firstName,
-          "lastName": data.lastName,
-          "address": data.address,
-          "age": data.age
-        }
-
-        collection.insertOne(userObj, function(err, result){
+        //Number of documents in the collection
+        collection.countDocuments({},function(err, answer){
+          let newPost = {
+            id: answer + 1,
+            title: data.title,
+            content: data.content,
+            author: data.author
+          }
+        //Insert document(newPost) into collection
+        collection.insertOne(newPost, function(err, result){
           if(!err){
             response['status'] = "success";
             response['data'] = result;
             callback(null, response);
           }else {
             response['status'] = "errorInsert";
-            response['data'] = userObj;
+            response['data'] = newPost;
             callback(null, response);
           }
-
         });
       });
+    });
   },
 
   findAll: function(data, callback){
@@ -64,7 +65,7 @@ const User = {
       const db = client.db(dbName);
 
       // Get the documents collection
-      const collection = db.collection('users');
+      const collection = db.collection('posts');
 
       // Find some documents
       collection.find({}).toArray(function(err, docs) {
@@ -82,4 +83,4 @@ const User = {
   }
 }
 
-module.exports = User;
+module.exports = Post;

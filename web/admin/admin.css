@@ -2,6 +2,10 @@ body {
   background-color: #F2F7FB;
 }
 
+h3, p, a {
+  font-family: Roboto;
+}
+
 .navbar {
   height: 60px !important;
   background-color: #ffffff;
@@ -29,7 +33,10 @@ body {
 .sidebar h3 a{
     color: #B7C0CD;
     padding-left: 20px;
+}
 
+.sidebar h3 {
+  margin-top: 18px;
 }
 
 .sidebar h3 a:hover {
@@ -53,6 +60,11 @@ body {
   color: #ffffff;
 }
 
+.list-container .nav .active {
+  background-color: #1D2531;
+  color: #ffffff;
+}
+
 .content {
   margin-left: 239px;
   padding-right:;
@@ -62,7 +74,7 @@ body {
   flex-direction: column;
 }
 
-.content input {
+.content .input {
   width: 100%;
   /* width: 924px; */
   height: 60px;
@@ -79,4 +91,30 @@ body {
 
 .button-container button {
   float: right;
+  margin-bottom: 20px;
+}
+
+/* view page */
+th, td {
+  padding-left: 50px;
+  font-family: Roboto;
+}
+td {
+  padding-top: 20px;
+}
+
+.search {
+  float: right !important;
+  padding-left: 717px;
+  margin-bottom: 18px;
+}
+
+.search button {
+  background-color: inherit;
+  border: 1px solid #C4C4C4;
+  color: #7D7878;
+}
+
+input[type=search] {
+  border: 1px solid #C4C4C4;
 }

@@ -11,7 +11,8 @@
     <link rel="stylesheet" type="text/css" href="admin.css">
     <!-- Include stylesheet -->
     <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-
+    <!-- Roboto font -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <title>Admin</title>
   </head>
@@ -25,30 +26,60 @@
 
         <div class="list-container">
           <nav class="nav flex-column">
-            <a class="nav-link" href="#">Create Post</a>
-            <a class="nav-link" href="#">Delete Post</a>
-            <a class="nav-link" href="#">View Post</a>
-            <a class="nav-link" href="#">Update Post</a>
+            <a class="nav-link" href="create.html">Create Post</a>
+            <a class="nav-link active" href="delete.html">Delete Post</a>
+            <a class="nav-link" href="view.html">View Post</a>
+            <a class="nav-link" href="update.html">Update Post</a>
           </nav>
         </div>
 
       </div>
 
       <div class="container-fluid content">
-        <!-- I enclosed the input, editor and button in the form tag with the idea to control all with one button. Might not work -->
-        <form class="" action="index.html" method="post">
-          <input type="text" name="" value="" placeholder="Title">
+        <div class="search">
+            <input type="search" name="" value="">
+            <button type="submit" class="btn btn-primary">Search Posts</button>
+        </div>
 
-          <!-- Create the editor container -->
-          <div id="editor">
-            <p>Some initial <strong>bold</strong> text</p>
-            <p><br></p>
-          </div>
+        <table style="width: 100%; border: 1px solid #C4C4C4;">
+          <tr style="background: #ffffff; border: 1px solid #C4C4C4;">
+            <th>
+              <input type="checkbox" name="" value="">
+            </th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Date</th>
+          </tr>
 
-          <div class="button-container">
-            <button type="submit" class="btn btn-primary">Post</button>
-          </div>
-        </form>
+          <tr>
+            <td>Binta and Friends</td>
+            <td>Caleb Omoijuanfo</td>
+            <td>5/16/2019</td>
+          </tr>
+
+          <tr>
+            <td>Binta and Friends</td>
+            <td>Caleb Omoijuanfo</td>
+            <td>5/16/2019</td>
+          </tr>
+
+          <tr>
+            <td>Binta and Friends</td>
+            <td>Caleb Omoijuanfo</td>
+            <td>5/16/2019</td>
+          </tr>
+
+          <tr>
+            <td>Binta and Friends</td>
+            <td>Caleb Omoijuanfo</td>
+            <td>5/16/2019</td>
+          </tr>
+
+        </table>
+
+        <div class="button-container" style="margin-top: 20px;">
+          <button type="submit" class="btn btn-primary">Add New</button>
+        </div>
       </div>
     </div>
     <!-- <p>Hello World!</p> -->

@@ -12,6 +12,10 @@
   color: #FFCC78 !important;
 }
 
+.topnav .active {
+  text-decoration: underline;
+}
+
 .topnav .menu {
   padding-left: 50px;
 }
