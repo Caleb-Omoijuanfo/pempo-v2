@@ -121,6 +121,15 @@
   color: #FFCC78 !important;
 }
 
+.button-container a {
+  color: #6c757d;
+}
+
+.button-container a:hover {
+  color: #FFCC78 !important;
+  text-decoration: none;
+}
+
 form {
   margin-bottom: 10px;
 }
@@ -134,6 +143,20 @@ form {
 
 .index-form input[placeholder] {
     text-align: center;
+}
+
+/* All posts Page */
+.right-container .all-posts {
+  height: 68px !important;
+}
+
+.right-container .heading {
+  padding-top: 9px;
+}
+
+/* Post page */
+.right-container .post {
+  height: 100% !important;
 }
 
 footer {
@@ -182,6 +205,15 @@ footer li {
 }
 
 @media screen and (max-width: 800px) {
+  .card-img {
+    width: 95%;
+    height: 90%;
+    object-fit: cover;
+  }
+
+}
+
+@media screen and (max-width: 800px) {
   .content {
     flex-direction:column-reverse;
   }
@@ -216,6 +248,11 @@ footer li {
   .right-container .contact-card {
     height: 100% !important;
   }
+
+/* All posts Page */
+.right-container .heading {
+  padding-top: 17px;
+}
 
   footer {
     flex-direction: column;

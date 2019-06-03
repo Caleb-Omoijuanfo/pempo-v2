@@ -4,6 +4,8 @@ const assert = require('assert');
 // Connection URL
 const url = 'mongodb://localhost:27017';
 
+const mongoOptions = { useNewUrlParser: true };
+
 // Database Name
 const dbName = 'pempo';
 
@@ -14,7 +16,7 @@ const Post = {
     let response = {}
 
       // Create a new MongoClient
-      const client = new MongoClient(url);
+      const client = new MongoClient(url, mongoOptions);
       // Use connect method to connect to the Server
       client.connect(function(err) {
         assert.equal(null, err);
@@ -32,7 +34,8 @@ const Post = {
             id: answer + 1,
             title: data.title,
             content: data.content,
-            author: data.author
+            author: data.author,
+            image: data.image
           }
         //Insert document(newPost) into collection
         collection.insertOne(newPost, function(err, result){
@@ -55,7 +58,7 @@ const Post = {
     let response = {}
 
     // Create a new MongoClient
-    const client = new MongoClient(url);
+    const client = new MongoClient(url, mongoOptions);
     // Use connect method to connect to the Server
     client.connect(function(err) {
       assert.equal(null, err);
@@ -80,7 +83,169 @@ const Post = {
         }
       });
     });
-  }
+  },
+
+  findID: function(data, callback){
+
+    let response = {}
+
+      // Create a new MongoClient
+      const client = new MongoClient(url, mongoOptions);
+      // Use connect method to connect to the Server
+      client.connect(function(err) {
+        assert.equal(null, err);
+        console.log("Connected successfully to server");
+
+        //get Database
+        const db = client.db(dbName);
+
+        // Get the user collection
+        const collection = db.collection('posts');
+
+        //find user by ID.
+        collection.find({id:Number(data.id)}).toArray(function(err, docs) {
+          if(!err){
+            response['status'] = "success";
+            response['data'] = docs;
+            callback(null, response);
+          }else {
+            response['status'] = "error";
+            response['data'] = data;
+            callback(null, response);
+          }
+        });
+    });
+  },
+
+  findAuthor: function(data, callback){
+
+    let response = {}
+
+      // Create a new MongoClient
+      const client = new MongoClient(url, mongoOptions);
+      // Use connect method to connect to the Server
+      client.connect(function(err) {
+        assert.equal(null, err);
+        console.log("Connected successfully to server");
+
+        //get Database
+        const db = client.db(dbName);
+
+        // Get the post collection
+        const collection = db.collection('posts');
+
+        //find post by author.
+        collection.find({ author:data.author }).toArray(function(err, docs) {
+          if(!err){
+            response['status'] = "success";
+            response['data'] = docs;
+            callback(null, response);
+          }else {
+            response['status'] = "error";
+            response['data'] = data;
+            callback(null, response);
+          }
+        });
+    });
+  },
+
+  findTitle: function(data, callback){
+
+    let response = {}
+
+      // Create a new MongoClient
+      const client = new MongoClient(url, mongoOptions);
+      // Use connect method to connect to the Server
+      client.connect(function(err) {
+        assert.equal(null, err);
+        console.log("Connected successfully to server");
+
+        //get Database
+        const db = client.db(dbName);
+
+        // Get the post collection
+        const collection = db.collection('posts');
+
+        //find post by author.
+        collection.find({ title:data.title }).toArray(function(err, docs) {
+          if(!err){
+            response['status'] = "success";
+            response['data'] = docs;
+            callback(null, response);
+          }else {
+            response['status'] = "error";
+            response['data'] = data;
+            callback(null, response);
+          }
+        });
+    });
+  },
+
+  delete: function(data, callback){
+
+    let response = {}
+
+      // Create a new MongoClient
+      const client = new MongoClient(url, mongoOptions);
+      // Use connect method to connect to the Server
+      client.connect(function(err) {
+        assert.equal(null, err);
+        console.log("Connected successfully to server");
+
+        //get Database
+        const db = client.db(dbName);
+
+        // Get the post collection
+        const collection = db.collection('posts');
+
+        //Delete document by post title
+        collection.deleteOne({ id:Number(data.id) }, function(err, docs) {
+          if(!err){
+            response['status'] = "success";
+            response['data'] = docs;
+            callback(null, response);
+          }else {
+            response['status'] = "error";
+            response['data'] = data;
+            callback(null, response);
+          }
+        });
+    });
+  },
+
+  deleteMany: function(data, callback){
+
+    let response = {}
+
+      // Create a new MongoClient
+      const client = new MongoClient(url, mongoOptions);
+      // Use connect method to connect to the Server
+      client.connect(function(err) {
+        assert.equal(null, err);
+        console.log("Connected successfully to server");
+
+        //get Database
+        const db = client.db(dbName);
+
+        // Get the post collection
+        const collection = db.collection('posts');
+
+        //Delete document by post title
+        collection.deleteMany({ author: data.author }, function(err, docs) {
+          if(!err){
+            response['status'] = "success";
+            response['data'] = docs;
+            callback(null, response);
+          }else {
+            response['status'] = "error";
+            response['data'] = data;
+            callback(null, response);
+          }
+        });
+    });
+  },
+
+
 }
 
 module.exports = Post;
