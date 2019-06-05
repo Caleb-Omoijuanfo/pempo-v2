@@ -1,5 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
+const util = require('../../api/services/util.js');
 
 // Connection URL
 const url = 'mongodb://localhost:27017';
@@ -35,7 +36,8 @@ const Post = {
             title: data.title,
             content: data.content,
             author: data.author,
-            image: data.image
+            category: data.category,
+            date:util.date()
           }
         //Insert document(newPost) into collection
         collection.insertOne(newPost, function(err, result){
